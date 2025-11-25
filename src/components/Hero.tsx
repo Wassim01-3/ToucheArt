@@ -3,7 +3,12 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Gradient */}
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url(/bg.png)' }}
+      />
+      {/* Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-sea-blue/40 to-primary/80" />
 
       {/* Hero Content */}
