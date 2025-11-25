@@ -2,6 +2,30 @@ import { motion } from "framer-motion";
 import { Download, Smartphone, Sparkles } from "lucide-react";
 import Hero from "@/components/Hero";
 
+// Android Icon Component
+const AndroidIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1349 1.0989L4.8428 5.4467a.4161.4161 0 00-.5676-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.186.8532 13.8324.5 16.9514h23c-.3532-3.119-2.1889-5.765-5.1225-7.63z" />
+  </svg>
+);
+
+// iOS/Apple Icon Component
+const AppleIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+  </svg>
+);
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -106,7 +130,7 @@ const Index = () => {
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-4 bg-primary text-primary-foreground px-8 py-6 rounded-full font-semibold text-lg shadow-button hover:shadow-button hover:opacity-90 transition-all duration-300 min-w-[280px] justify-center"
               >
-                <Download className="w-6 h-6" />
+                <AndroidIcon className="w-6 h-6" />
                 <span>Télécharger APK Android</span>
               </motion.a>
 
@@ -127,7 +151,7 @@ const Index = () => {
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-4 bg-golden text-golden-foreground px-8 py-6 rounded-full font-semibold text-lg shadow-button hover:shadow-button hover:opacity-90 transition-all duration-300 min-w-[280px] justify-center"
               >
-                <Smartphone className="w-6 h-6" />
+                <AppleIcon className="w-6 h-6" />
                 <span>Ouvrir Webapp iOS</span>
               </motion.a>
             </div>
@@ -138,7 +162,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-4 bg-sand text-center">
         <p className="text-muted-foreground">
-          © 2025 ToucheArt. Tous droits réservés. 
+          © 2024 ToucheArt. Tous droits réservés. Application gratuite.
         </p>
       </footer>
     </div>
@@ -146,5 +170,4 @@ const Index = () => {
 };
 
 export default Index;
-
 
