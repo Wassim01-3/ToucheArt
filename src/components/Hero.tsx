@@ -20,7 +20,7 @@ const Hero = () => {
         >
           {/* Logo */}
           <motion.div
-            className="mb-0 relative inline-block"
+            className="mb-0 -mb-8 md:-mb-12 lg:-mb-16 relative inline-block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.1, delay: 0.2 }}
