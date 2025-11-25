@@ -20,7 +20,7 @@ const Hero = () => {
         >
           {/* Logo */}
           <motion.div
-            className="mb-1 relative inline-block"
+            className="mb-0 relative inline-block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.1, delay: 0.2 }}
@@ -38,7 +38,7 @@ const Hero = () => {
               <motion.img 
                 src="/logo.png"
                 alt="ToucheArt Logo" 
-                className="w-64 h-auto mx-auto md:w-80 lg:w-96 drop-shadow-lg"
+                className="w-80 h-auto mx-auto md:w-96 lg:w-[32rem] drop-shadow-lg"
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
                 transition={{ 
@@ -52,7 +52,7 @@ const Hero = () => {
 
           {/* Title */}
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight -mt-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
