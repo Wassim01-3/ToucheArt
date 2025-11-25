@@ -138,7 +138,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-4 bg-sand text-center">
         <p className="text-muted-foreground">
-          © 2024 ToucheArt. Tous droits réservés. Application gratuite.
+          © 2025 ToucheArt. Tous droits réservés. 
         </p>
       </footer>
     </div>
@@ -146,4 +146,5 @@ const Index = () => {
 };
 
 export default Index;
+
 
