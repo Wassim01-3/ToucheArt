@@ -20,7 +20,7 @@ const Hero = () => {
         >
           {/* Logo */}
           <motion.div
-            className="mb-0 relative inline-block"
+            className="mb-0 mt-8 md:mt-12 relative inline-block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.1, delay: 0.2 }}
@@ -52,7 +52,7 @@ const Hero = () => {
 
           {/* Title */}
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight -mt-8"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight -mt-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
