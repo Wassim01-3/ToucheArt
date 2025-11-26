@@ -115,7 +115,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               {/* Android APK Download Button */}
               <motion.a
-                href="/ToucheArt.apk"
+                href="https://github.com/Wassim01-3/ToucheArt/releases/download/ToucheArt.apk/ToucheArt.apk"
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -164,7 +164,7 @@ const Index = () => {
           <motion.button
             onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
               e.preventDefault();
-              const apkUrl = "/ToucheArt.apk";
+              const apkUrl = "https://github.com/Wassim01-3/ToucheArt/releases/download/ToucheArt.apk/ToucheArt.apk";
               window.location.href = apkUrl;
             }}
             whileTap={{ scale: 0.95 }}
