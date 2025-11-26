@@ -52,7 +52,7 @@ const Hero = () => {
 
           {/* Title */}
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight -mt-48 md:-mt-56 lg:-mt-64"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight -mt-40 md:-mt-48 lg:-mt-56"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
