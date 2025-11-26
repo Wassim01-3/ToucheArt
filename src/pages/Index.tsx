@@ -96,8 +96,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Download Section */}
-      <section className="py-16 px-4 bg-background">
+      {/* Download Section - Desktop */}
+      <section className="hidden sm:block py-16 px-4 bg-background">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -115,17 +115,8 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               {/* Android APK Download Button */}
               <motion.a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  // TODO: Replace with actual APK download URL
-                  const apkUrl = "#"; // Add your APK URL here
-                  if (apkUrl !== "#") {
-                    window.location.href = apkUrl;
-                  } else {
-                    alert("Le lien de téléchargement sera disponible bientôt");
-                  }
-                }}
+                href="/ToucheArt.apk"
+                download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-4 bg-primary text-primary-foreground px-8 py-6 rounded-full font-semibold text-lg shadow-button hover:shadow-button hover:opacity-90 transition-all duration-300 min-w-[280px] justify-center"
@@ -160,15 +151,52 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 bg-sand text-center">
+      <footer className="py-8 px-4 bg-sand text-center pb-20 sm:pb-8">
         <p className="text-muted-foreground">
-          © 2025 ToucheArt. Tous droits réservés.
+          © 2025 ToucheArt. Tous droits réservés. 
         </p>
       </footer>
+
+      {/* Mobile Bottom Tab Bar - Download Buttons */}
+      <div className="fixed bottom-0 left-0 right-0 sm:hidden z-50 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg">
+        <div className="flex items-center justify-around px-2 py-3 gap-2">
+          {/* Android APK Download Button */}
+          <motion.button
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+              e.preventDefault();
+              const apkUrl = "/ToucheArt.apk";
+              window.location.href = apkUrl;
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="flex flex-col items-center justify-center gap-1 flex-1 bg-primary text-primary-foreground px-4 py-3 rounded-lg font-semibold text-sm shadow-md hover:opacity-90 transition-all duration-300 min-h-[70px]"
+          >
+            <AndroidIcon className="w-6 h-6" />
+            <span className="text-xs">Android</span>
+          </motion.button>
+
+          {/* iOS Webapp Button */}
+          <motion.button
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+              e.preventDefault();
+              // TODO: Replace with actual webapp URL
+              const webappUrl = "#"; // Add your webapp URL here
+              if (webappUrl !== "#") {
+                window.open(webappUrl, "_blank");
+              } else {
+                alert("Le lien de l'application web sera disponible bientôt");
+              }
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="flex flex-col items-center justify-center gap-1 flex-1 bg-golden text-golden-foreground px-4 py-3 rounded-lg font-semibold text-sm shadow-md hover:opacity-90 transition-all duration-300 min-h-[70px]"
+          >
+            <AppleIcon className="w-6 h-6" />
+            <span className="text-xs">iOS</span>
+          </motion.button>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default Index;
-
 
