@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-sea-blue/40 to-primary/80" />
 
       {/* Hero Content */}
-      <div className="absolute top-0 left-0 right-0 z-10 text-center px-4 max-w-4xl mx-auto transform -translate-y-8 md:-translate-y-12 lg:-translate-y-16">
+      <div className="absolute top-4 md:top-6 lg:top-8 left-0 right-0 z-10 text-center px-4 max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
