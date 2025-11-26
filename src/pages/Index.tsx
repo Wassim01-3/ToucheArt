@@ -150,54 +150,69 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Download Section - Mobile (similar to desktop, not a tab bar) */}
+      <section className="sm:hidden py-12 px-4 bg-background">
+        <div className="max-w-xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-2xl font-bold text-foreground mb-6">
+              Téléchargez ToucheArt
+            </h2>
+            <p className="text-base text-muted-foreground mb-8 max-w-md mx-auto">
+              Choisissez votre plateforme et commencez à explorer l'art et l'artisanat tunisien
+            </p>
+
+            <div className="flex flex-col gap-4 justify-center items-stretch">
+              {/* Android APK Download Button */}
+              <motion.a
+                href="https://github.com/Wassim01-3/ToucheArt/releases/download/ToucheArt.apk/ToucheArt.apk"
+                download
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.96 }}
+                className="flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-full font-semibold text-base shadow-button hover:shadow-button hover:opacity-90 transition-all duration-300 justify-center"
+              >
+                <AndroidIcon className="w-5 h-5" />
+                <span>Télécharger APK Android</span>
+              </motion.a>
+
+              {/* iOS Webapp Button */}
+              <motion.a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  // TODO: Replace with actual webapp URL
+                  const webappUrl = "#"; // Add your webapp URL here
+                  if (webappUrl !== "#") {
+                    window.open(webappUrl, "_blank");
+                  } else {
+                    alert("Le lien de l'application web sera disponible bientôt");
+                  }
+                }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.96 }}
+                className="flex items-center gap-3 bg-golden text-golden-foreground px-6 py-4 rounded-full font-semibold text-base shadow-button hover:shadow-button hover:opacity-90 transition-all duration-300 justify-center"
+              >
+                <AppleIcon className="w-5 h-5" />
+                <span>Ouvrir Webapp iOS</span>
+              </motion.a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="py-8 px-4 bg-sand text-center pb-20 sm:pb-8">
+      <footer className="py-8 px-4 bg-sand text-center">
         <p className="text-muted-foreground">
           © 2025 ToucheArt. Tous droits réservés. 
         </p>
       </footer>
-
-      {/* Mobile Bottom Tab Bar - Download Buttons */}
-      <div className="fixed bottom-0 left-0 right-0 sm:hidden z-50 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg">
-        <div className="flex items-center justify-around px-2 py-3 gap-2">
-          {/* Android APK Download Button */}
-          <motion.button
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-              e.preventDefault();
-              const apkUrl = "https://github.com/Wassim01-3/ToucheArt/releases/download/ToucheArt.apk/ToucheArt.apk";
-              window.location.href = apkUrl;
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="flex flex-col items-center justify-center gap-1 flex-1 bg-primary text-primary-foreground px-4 py-3 rounded-lg font-semibold text-sm shadow-md hover:opacity-90 transition-all duration-300 min-h-[70px]"
-          >
-            <AndroidIcon className="w-6 h-6" />
-            <span className="text-xs">Android</span>
-          </motion.button>
-
-          {/* iOS Webapp Button */}
-          <motion.button
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-              e.preventDefault();
-              // TODO: Replace with actual webapp URL
-              const webappUrl = "#"; // Add your webapp URL here
-              if (webappUrl !== "#") {
-                window.open(webappUrl, "_blank");
-              } else {
-                alert("Le lien de l'application web sera disponible bientôt");
-              }
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="flex flex-col items-center justify-center gap-1 flex-1 bg-golden text-golden-foreground px-4 py-3 rounded-lg font-semibold text-sm shadow-md hover:opacity-90 transition-all duration-300 min-h-[70px]"
-          >
-            <AppleIcon className="w-6 h-6" />
-            <span className="text-xs">iOS</span>
-          </motion.button>
-        </div>
-      </div>
     </div>
   );
 };
 
 export default Index;
-
 
